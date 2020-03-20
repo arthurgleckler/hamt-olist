@@ -1,0 +1,25 @@
+#+TITLE: Persistent ordered list based on HAMTs (hash-array mapped tries)
+
+This is an implementation of persistent ordered list based on HAMTs
+(hash-array mapped tries).  It was inspired by a [[https://srfi-email.schemers.org/srfi-125/msg/13436171/][discussion]] started by
+Marc Nieper-Wißkirchen on the [[https://srfi.schemers.org/srfi-125/][SRFI 125]] mailing list:
+
+#+BEGIN_QUOTE
+R7RS-large doesn't seem to have a list datatype yet, which is backed
+up by a hash table and which guarantees uniqueness of the list
+entries.
+#+END_QUOTE
+
+This is just a sketch, so I've used API conventions that match my
+earlier HAMT and Persistent Hash Map implementation, which was later
+adapted for [[https://srfi.schemers.org/srfi-146/][SRFI 146]].  I haven't followed Marc's API nor the one that
+John Cowan proposed in the discussion.  Still, if someone finds my
+approach fruitful, we could easily wrap my code in a matching API or
+alter it to match.
+
+Note that this code is specific to MIT Scheme, and uses my own
+unit-test framework from 2003 rather than a more recent one, e.g. the
+one defined in [[https://srfi.schemers.org/srfi-64/][SRFI 64]].  That, too, could be changed.  I made similar
+changes for the code in SRFI 146.
+
+If this proves useful to someone, please let me know.
